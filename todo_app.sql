@@ -19,8 +19,11 @@ CREATE TABLE tasks (
   updated_at timestamp,
   completed boolean
 );
+INSERT INTO tasks(id, title, description, completed)
+VALUES(1, 'do homework', 'finish assignment', true);
 
 ALTER TABLE tasks DROP COLUMN completed;
 
-INSERT INTO tasks(id, title, description, completed)
-VALUES(1, 'do homework', 'finish assignment', true);
+ALTER TABLE tasks ADD COLUMN completed_at timestamp;
+
+ALTER TABLE tasks ALTER COLUMN completed_at SET DEFAULT null;
