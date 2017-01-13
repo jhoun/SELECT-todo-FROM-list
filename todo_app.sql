@@ -67,3 +67,5 @@ SELECT * FROM tasks WHERE title LIKE '%mistake%';
 
 -- deletes task by finding title
 DELETE FROM tasks WHERE title = 'mistake 1';
+
+SELECT title, description FROM tasks WHERE title LIKE '%mistake%';
