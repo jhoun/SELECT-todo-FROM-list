@@ -49,3 +49,8 @@ UPDATE tasks
 
 -- selects tasks that are not yet complete
 SELECT * FROM tasks WHERE completed_at IS NULL;
+
+-- selects tasks from descending order
+SELECT * FROM tasks ORDER BY created_at DESC;
+
+INSERT INTO tasks (DEFAULT, 'mistake 1', 'a test entry');
