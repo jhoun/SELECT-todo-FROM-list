@@ -46,3 +46,6 @@ SELECT completed_at FROM tasks WHERE completed_at IS NULL;
 UPDATE tasks
   SET completed_at = now()
   WHERE title = 'Study SQL';
+
+-- selects tasks that are not yet complete
+SELECT * FROM tasks WHERE completed_at IS NULL;
