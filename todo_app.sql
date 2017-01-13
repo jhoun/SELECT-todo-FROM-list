@@ -40,7 +40,7 @@ INSERT INTO tasks VALUES(DEFAULT,'Study SQL', 'Complete this exercise', now(), n
 INSERT INTO tasks VALUES(DEFAULT, 'Study PostgreSQL', 'Read all the documentation');
 
 -- selects 'completed_at' column && checks if it's null, then returns to you
-SELECT completed_at FROM tasks WHERE completed_at IS NULL;
+-- SELECT completed_at FROM tasks WHERE completed_at IS NULL;
 
 -- updates tasks by grabbing title and setting it
 UPDATE tasks
@@ -48,9 +48,9 @@ UPDATE tasks
   WHERE title = 'Study SQL';
 
 -- selects tasks that are not yet complete
-SELECT * FROM tasks WHERE completed_at IS NULL;
+-- SELECT * FROM tasks WHERE completed_at IS NULL;
 
 -- selects tasks from descending order
-SELECT * FROM tasks ORDER BY created_at DESC;
+-- SELECT * FROM tasks ORDER BY created_at DESC;
 
-INSERT INTO tasks (DEFAULT, 'mistake 1', 'a test entry');
+INSERT INTO tasks VALUES(DEFAULT, 'mistake 1', 'a test entry');
