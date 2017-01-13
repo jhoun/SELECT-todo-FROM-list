@@ -64,3 +64,6 @@ INSERT INTO tasks VALUES(DEFAULT, 'third mistake', 'another test entry');
 
 -- selects all tasks with title that have the word 'mistake' in it
 SELECT * FROM tasks WHERE title LIKE '%mistake%';
+
+-- deletes task by finding title
+DELETE FROM tasks WHERE title = 'mistake 1';
