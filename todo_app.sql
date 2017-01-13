@@ -58,3 +58,9 @@ INSERT INTO tasks VALUES(DEFAULT, 'mistake 1', 'a test entry');
 
 -- creates 4th new task
 INSERT INTO tasks VALUES(DEFAULT, 'mistake 2', 'another test entry');
+
+-- creates 5th new task
+INSERT INTO tasks VALUES(DEFAULT, 'third mistake', 'another test entry');
+
+-- selects all tasks with title that have the word 'mistake' in it
+SELECT * FROM tasks WHERE title LIKE '%mistake%';
