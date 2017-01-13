@@ -12,7 +12,7 @@ CREATE DATABASE todo_app;
 \c todo_app;
 
 CREATE TABLE tasks (
-  id integer PRIMARY KEY,
+  id SERIAL PRIMARY KEY,
   title varchar,
   description text,
   created_at timestamp,
@@ -33,7 +33,16 @@ ALTER TABLE tasks
   ALTER COLUMN updated_at SET DEFAULT now(),
   ALTER COLUMN updated_at SET NOT NULL;
 
+-- creates new task
+INSERT INTO tasks VALUES(DEFAULT,'Study SQL', 'Complete this exercise', now(), now(), NULL);
 
+-- creates 2nd new task
+INSERT INTO tasks VALUES(DEFAULT, 'Study PostgreSQL', 'Read all the documentation');
 
-INSERT INTO tasks(id, title, description, created_at, updated_at, completed_at)
-VALUES(1, 'Study SQL', 'Complete this exercise', now(), now(), NULL);
+-- selects 'completed_at' column && checks if it's null, then returns to you
+SELECT completed_at FROM tasks WHERE completed_at IS NULL;
+
+-- updates tasks by grabbing title and setting it
+UPDATE tasks
+  SET completed_at = now()
+  WHERE title = 'Study SQL';
