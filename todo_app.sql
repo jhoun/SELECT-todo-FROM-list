@@ -53,4 +53,8 @@ UPDATE tasks
 -- selects tasks from descending order
 -- SELECT * FROM tasks ORDER BY created_at DESC;
 
+-- creates 3rd new task
 INSERT INTO tasks VALUES(DEFAULT, 'mistake 1', 'a test entry');
+
+-- creates 4th new task
+INSERT INTO tasks VALUES(DEFAULT, 'mistake 2', 'another test entry');
