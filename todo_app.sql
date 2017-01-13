@@ -68,4 +68,11 @@ SELECT * FROM tasks WHERE title LIKE '%mistake%';
 -- deletes task by finding title
 DELETE FROM tasks WHERE title = 'mistake 1';
 
+-- selects title and descript based on word
 SELECT title, description FROM tasks WHERE title LIKE '%mistake%';
+
+-- deletes task by finding word in title
+DELETE FROM tasks WHERE title LIKE '%mistake%';
+
+-- select all fields by title in ascending order
+SELECT * FROM tasks ORDER BY title ASC;
