@@ -19,11 +19,19 @@ CREATE TABLE tasks (
   updated_at timestamp,
   completed boolean
 );
-INSERT INTO tasks(id, title, description, completed)
-VALUES(1, 'do homework', 'finish assignment', true);
 
+-- drops 'completed' column
 ALTER TABLE tasks DROP COLUMN completed;
 
+-- adds 'completed_at' and sets default value to null
 ALTER TABLE tasks ADD COLUMN completed_at timestamp;
+ALTER TABLE tasks
+  ALTER COLUMN completed_at SET DEFAULT NULL;
 
-ALTER TABLE tasks ALTER COLUMN completed_at SET DEFAULT null;
+-- set 'updated at' constraint to not null && default is set to now()
+ALTER TABLE tasks
+  ALTER COLUMN updated_at SET DEFAULT now(),
+  ALTER COLUMN updated_at SET NOT NULL;
+
+INSERT INTO tasks(id, title, description, completed_at)
+VALUES(1, 'do homework', 'finish assignment', now());
